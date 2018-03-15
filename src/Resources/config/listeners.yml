@@ -1,0 +1,7 @@
+services:
+    js_insert.listener.response:
+        class: JsInsert\Listener\ResponseListener
+        calls:
+            - [setReferenceTag, [ 'head']]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
